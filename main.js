@@ -57,11 +57,18 @@ const book2 = {
 const areTheAlike = function (bok1, bok2) {
   let book1Values = Object.values(bok1);
   let book2Values = Object.values(bok2);
-
+  console.log(book2Values);
+  let result = 1;
   return book1Values.reduce((acc, curr, i, arr) => {
-    return book2Values[i] === curr
-      ? "Yes they are alike."
-      : "No they are not alike.";
-  });
+    // console.log(curr, "------ ", book2Values[i]);
+    // console.log(book2Values[i] === curr);
+    if (book2Values[i] === curr) {
+      result = result * 1;
+    } else {
+      result = result * 0;
+    }
+
+    return result === 1 ? "Yes they are alike." : "No they are not alike.";
+  }, 0);
 };
 console.log("third: are they alike ? \n", areTheAlike(book1, book2));
