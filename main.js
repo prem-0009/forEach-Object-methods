@@ -55,8 +55,8 @@ const book2 = {
 };
 
 const areTheAlike = function (bok1, bok2) {
-  let book1Values = Object.values(book1);
-  let book2Values = Object.values(book2);
+  let book1Values = Object.values(bok1);
+  let book2Values = Object.values(bok2);
 
   return book1Values.reduce((acc, curr, i, arr) => {
     return book2Values[i] === curr
